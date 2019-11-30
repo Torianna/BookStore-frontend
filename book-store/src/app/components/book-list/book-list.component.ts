@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Book } from '../../models/book';
+import { MatTableDataSource } from '@angular/material';
 
 @Component({
   selector: 'app-book-list',
@@ -7,7 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BookListComponent implements OnInit {
 
-  constructor() { }
+  book: Book[] = [];
+  dataSource = new MatTableDataSource(this.book);
+  displayedColumns: string[] = ['id', 'title', 'author', 'ISBN', 'actions'];
+
+
+
+  constructor() {
+  }
 
   ngOnInit() {
   }

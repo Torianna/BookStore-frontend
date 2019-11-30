@@ -7,6 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { MainComponent } from './components/main/main.component';
 import { BookListComponent } from './components/book-list/book-list.component';
+import { MatIconModule, MatTableModule } from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,9 @@ import { BookListComponent } from './components/book-list/book-list.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatTableModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]
