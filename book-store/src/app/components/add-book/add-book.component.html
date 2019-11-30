@@ -1,0 +1,21 @@
+<div class="box">
+  <h4 mat-dialog-title>Add Book</h4>
+  <div mat-dialog-content style="overflow-y: hidden">
+    <div class="style">
+            <div class="info">
+              <mat-form-field class="example-full-width">
+                <input matInput placeholder="Title" [(ngModel)]="book.bookTitle" >
+              </mat-form-field>
+              <mat-form-field class="example-full-width">
+                <input matInput placeholder="Author" [(ngModel)]="book.author" >
+              </mat-form-field>
+              <mat-form-field class="example-full-width">
+                <input matInput placeholder="ISBN" [(ngModel)]="book.ISBN" >
+              </mat-form-field>
+            </div>
+
+          <button mat-raised-button color="primary" type="submit" name="upload" value="Upload" (click)="addBook()">Upload</button>
+
+    </div>
+  </div>
+</div>
