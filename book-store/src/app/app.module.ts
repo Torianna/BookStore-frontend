@@ -18,6 +18,7 @@ import {
 } from '@angular/material';
 import { AddBookComponent } from './components/add-book/add-book.component';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -39,7 +40,8 @@ import { FormsModule } from '@angular/forms';
     FormsModule,
     MatDialogModule,
     MatInputModule,
-    MatButtonModule
+    MatButtonModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

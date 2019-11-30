@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Book } from '../../models/book';
-import { MatTableDataSource } from '@angular/material';
+import { MatDialog, MatTableDataSource } from '@angular/material';
 import { BookService } from '../../services/book.service';
+import { AddBookComponent } from '../add-book/add-book.component';
 
 @Component({
   selector: 'app-book-list',
@@ -15,8 +16,7 @@ export class BookListComponent implements OnInit {
   displayedColumns: string[] = ['id', 'title', 'author', 'ISBN', 'actions'];
 
 
-
-  constructor(private bookService: BookService) {
+  constructor(private bookService: BookService, public dialog: MatDialog) {
   }
 
   ngOnInit() {
@@ -32,4 +32,7 @@ export class BookListComponent implements OnInit {
     this.getAllSeries();
   }
 
+  openAddBook() {
+    this.dialog.open(AddBookComponent, {});
+  }
 }
