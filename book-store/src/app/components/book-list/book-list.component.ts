@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Book } from '../../models/book';
 import { MatTableDataSource } from '@angular/material';
+import { BookService } from '../../services/book.service';
 
 @Component({
   selector: 'app-book-list',
@@ -15,10 +16,20 @@ export class BookListComponent implements OnInit {
 
 
 
-  constructor() {
+  constructor(private bookService: BookService) {
   }
 
   ngOnInit() {
+  }
+
+  async getAllSeries() {
+    this.dataSource.data = await this.bookService.getAllBooks();
+  }
+
+  async delete(book: Book) {
+
+    await this.bookService.deleteBookById(book.id);
+    this.getAllSeries();
   }
 
 }
