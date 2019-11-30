@@ -7,8 +7,18 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { MainComponent } from './components/main/main.component';
 import { BookListComponent } from './components/book-list/book-list.component';
-import { MatIconModule, MatTableModule } from '@angular/material';
-import { AddBookComponent } from './component/add-book/add-book.component';
+import {
+  MatButtonModule,
+  MatCardModule,
+  MatDialogModule,
+  MatFormFieldModule,
+  MatIconModule,
+  MatInputModule,
+  MatTableModule
+} from '@angular/material';
+import { AddBookComponent } from './components/add-book/add-book.component';
+import { FormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -23,7 +33,13 @@ import { AddBookComponent } from './component/add-book/add-book.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     MatTableModule,
-    MatIconModule
+    MatIconModule,
+    MatFormFieldModule,
+    MatCardModule,
+    FormsModule,
+    MatDialogModule,
+    MatInputModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
