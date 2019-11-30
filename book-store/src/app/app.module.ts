@@ -8,13 +8,15 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { MainComponent } from './components/main/main.component';
 import { BookListComponent } from './components/book-list/book-list.component';
 import { MatIconModule, MatTableModule } from '@angular/material';
+import { AddBookComponent } from './component/add-book/add-book.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     MainComponent,
-    BookListComponent
+    BookListComponent,
+    AddBookComponent
   ],
   imports: [
     BrowserModule,
