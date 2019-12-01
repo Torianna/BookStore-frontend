@@ -4,11 +4,12 @@
     <div class="style">
             <div class="info">
               <mat-form-field class="example-full-width">
-                <input matInput placeholder="Title" [(ngModel)]="book.bookTitle" >
+                <input matInput placeholder="Title" [(ngModel)]="book.bookTitle">
               </mat-form-field>
               <mat-form-field class="example-full-width">
-                <input matInput placeholder="Author" [(ngModel)]="book.author" >
+                <input matInput placeholder="Author" [(ngModel)]="book.author" [pattern]="patternNormal" [formControl]="AuthorName">
               </mat-form-field>
+              <mat-error *ngIf="AuthorName.errors&&AuthorName.errors.pattern">{{errorMgs}}</mat-error>
               <mat-form-field class="example-full-width">
                 <input matInput placeholder="ISBN" [(ngModel)]="book.ISBN" >
               </mat-form-field>
