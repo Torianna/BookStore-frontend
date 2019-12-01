@@ -1,4 +1,4 @@
-<img src="/assets/logoblack.png" alt="logo">
+<a href="/main"><img src="/assets/logo.svg" alt="logo" style="filter: invert(100%);"></a>
 
 <div *ngIf="localStorage.getItem('username'); else login" class="buttons">
   <a (click)="onLogOut($event)">LOG OUT</a>

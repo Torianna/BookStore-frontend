@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Book } from '../../models/book';
 import { BookService } from '../../services/book.service';
 import { MatDialogRef } from '@angular/material';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-add-book',
@@ -13,16 +14,28 @@ export class AddBookComponent implements OnInit {
   book: Book =
     {
       id: 0,
-      bookTitle: '',
+      title: '',
       author: '',
       ISBN: ''
     };
 
+  AuthorName = new FormControl();
+  errorMgs: string;
+  selectedPattern: string;
+  patternNormal: any = '^[A].*';
+  isOpen: false;
+
   constructor(private service: BookService,
-              private dialogRef: MatDialogRef<AddBookComponent>,) {
+              private dialogRef: MatDialogRef<AddBookComponent>) {
   }
 
   ngOnInit() {
+
+    this.selectedPattern = this.patternNormal; // will change based on user preference
+
+    if (this.selectedPattern === this.patternNormal) {
+      this.errorMgs = 'Author name should start from letter A';
+    }
   }
 
   async addBook() {

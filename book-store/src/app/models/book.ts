@@ -1,9 +1,8 @@
-import { User } from './user';
 
 export class Book {
 
   id: number;
-  bookTitle: string;
+  title: string;
   author: string;
   ISBN: string;
 

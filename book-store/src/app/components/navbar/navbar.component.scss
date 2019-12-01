@@ -15,8 +15,8 @@
   position: sticky;
   top: 0;
   z-index: 2;
-  background: black;
-  border: 1px solid white;
+  background: #525252;
+
 }
 
 img {
@@ -31,17 +31,16 @@ img {
 
   a {
     margin: 0 10px;
-    color: #FFCB9A;
+    color: floralwhite;
     padding: 1rem;
     font-weight: 700;
-    border-radius: .5rem;
-    background-color: #116460;
-    transition: .2s ease-in-out;
     cursor: pointer;
+    text-decoration: none;
   }
 
   a:hover {
-    background-color: #11928e;
+    text-decoration: underline;
+    text-underline: floralwhite;
   }
 }
 
