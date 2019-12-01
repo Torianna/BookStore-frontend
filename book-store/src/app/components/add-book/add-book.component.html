@@ -12,7 +12,7 @@
               </mat-form-field>
               <mat-error *ngIf="AuthorName.errors&&AuthorName.errors.pattern">{{errorMgs}}</mat-error>
               <mat-form-field class="example-full-width">
-                <input matInput placeholder="ISBN" [(ngModel)]="book.ISBN" [ngModelOptions]="{standalone: true}">
+                <input matInput placeholder="ISBN" [(ngModel)]="book.isbn" [ngModelOptions]="{standalone: true}">
               </mat-form-field>
             </div>
 

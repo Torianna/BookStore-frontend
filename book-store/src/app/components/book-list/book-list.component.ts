@@ -13,7 +13,7 @@ import { AddBookComponent } from '../add-book/add-book.component';
 export class BookListComponent implements OnInit {
   book: Book[] = [];
   dataSource = new MatTableDataSource(this.book);
-  displayedColumns: string[] = ['id', 'title', 'author', 'ISBN', 'actions'];
+  displayedColumns: string[] = ['id', 'title', 'author', 'isbn', 'actions'];
 
   constructor(private bookService: BookService, public dialog: MatDialog) {
   }

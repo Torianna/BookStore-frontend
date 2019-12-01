@@ -16,7 +16,7 @@ export class AddBookComponent implements OnInit {
       id: 0,
       title: '',
       author: '',
-      ISBN: ''
+      isbn: ''
     };
 
   AuthorName = new FormControl();
