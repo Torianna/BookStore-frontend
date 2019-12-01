@@ -5,5 +5,20 @@ mat-drawer-container {
 
 
 table {
-  width: 100%;
+  position: absolute;
+
+  width: -moz-available;
+}
+
+h4{
+  text-align: center;
+  font-size: 20px;
+}
+
+img
+{
+  top:60px;
+  position: relative;
+  width: 50px;
+
 }

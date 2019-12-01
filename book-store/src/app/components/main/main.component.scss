@@ -1,15 +1,15 @@
+
 .middle {
 
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 500px;
-  background-image: url("~src/assets/books.jpg");
+  height: 700px;
+  //background-image: url("~src/assets/books.jpg");
   vertical-align: top;
   width: -moz-available;
-  background-position: center;
-  background-size: cover;
   flex-direction: column;
+  overflow-y: hidden;
 }
 
 h4{

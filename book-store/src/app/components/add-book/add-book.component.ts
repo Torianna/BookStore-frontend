@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Book } from '../../models/book';
 import { BookService } from '../../services/book.service';
 import { MatDialogRef } from '@angular/material';
@@ -14,20 +14,23 @@ export class AddBookComponent implements OnInit {
   book: Book =
     {
       id: 0,
-      bookTitle: '',
+      title: '',
       author: '',
       ISBN: ''
     };
+
   AuthorName = new FormControl();
   errorMgs: string;
-  selectedPattern: string ;
+  selectedPattern: string;
   patternNormal: any = '^[A].*';
+  isOpen: false;
 
   constructor(private service: BookService,
               private dialogRef: MatDialogRef<AddBookComponent>) {
   }
 
   ngOnInit() {
+
     this.selectedPattern = this.patternNormal; // will change based on user preference
 
     if (this.selectedPattern === this.patternNormal) {
