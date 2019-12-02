@@ -23,7 +23,6 @@ export class AddBookComponent implements OnInit {
   errorMgs: string;
   selectedPattern: string;
   patternNormal: any = '^[A].*';
-  isOpen: false;
 
   constructor(private service: BookService,
               private dialogRef: MatDialogRef<AddBookComponent>) {
@@ -48,5 +47,9 @@ export class AddBookComponent implements OnInit {
         alert('Something went wrong');
         console.error(err);
       });
+  }
+
+  isRequired() {
+    return false;
   }
 }
