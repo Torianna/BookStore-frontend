@@ -3,20 +3,18 @@
   <h4 mat-dialog-title>Add Book</h4>
   <div mat-dialog-content style="overflow-y: hidden">
     <div class="style">
-            <div class="info">
               <mat-form-field class="example-full-width">
-                <input matInput placeholder="Title" [(ngModel)]="book.title" [ngModelOptions]="{standalone: true}" [required]="isRequired()">
+                <input  matInput placeholder="Title" [(ngModel)]="book.title" [ngModelOptions]="{standalone: true}" required >
               </mat-form-field>
               <mat-form-field class="example-full-width">
-                <input matInput placeholder="ISBN" [(ngModel)]="book.isbn" [ngModelOptions]="{standalone: true}">
+                <input  matInput placeholder="ISBN" [(ngModel)]="book.isbn" [ngModelOptions]="{standalone: true}" required >
               </mat-form-field>
               <mat-form-field class="example-full-width">
-                <input matInput placeholder="Author" [(ngModel)]="book.author"  [pattern]="patternNormal" [formControl]="AuthorName" >
+                <input  matInput placeholder="Author" [(ngModel)]="book.author"  [pattern]="patternNormal" [formControl]="AuthorName" required >
               </mat-form-field>
-              <mat-error *ngIf="AuthorName.errors&&AuthorName.errors.pattern; else submit" >{{errorMgs}}</mat-error>
-            </div>
-
-         <ng-template #submit> <button mat-raised-button color="primary" type="submit" name="upload" value="Upload" (click)="addBook()">Upload</button></ng-template>
+              <mat-error *ngIf="AuthorName.errors&&AuthorName.errors.pattern" >{{errorMgs}}</mat-error>
+              <button mat-raised-button color="primary" type="submit" name="upload" value="Upload"
+                                            [disabled]="!book.title||!book.isbn||!book.author" (click)="addBook()">Upload</button>
 
     </div>
   </div>

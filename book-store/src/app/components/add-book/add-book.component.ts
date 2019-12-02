@@ -2,7 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Book } from '../../models/book';
 import { BookService } from '../../services/book.service';
 import { MatDialogRef } from '@angular/material';
-import { FormControl } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-add-book',
@@ -24,8 +24,9 @@ export class AddBookComponent implements OnInit {
   selectedPattern: string;
   patternNormal: any = '^[A].*';
 
+
   constructor(private service: BookService,
-              private dialogRef: MatDialogRef<AddBookComponent>) {
+              private dialogRef: MatDialogRef<AddBookComponent>, private formBuilder: FormBuilder) {
   }
 
   ngOnInit() {
@@ -47,9 +48,5 @@ export class AddBookComponent implements OnInit {
         alert('Something went wrong');
         console.error(err);
       });
-  }
-
-  isRequired() {
-    return false;
   }
 }
