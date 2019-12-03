@@ -14,11 +14,7 @@ export class NavbarComponent implements OnInit {
   ngOnInit() {
   }
 
-  onLogIn($event: Event) {
-
-  }
-
   onLogOut($event: Event) {
-
+    localStorage.removeItem('username')
   }
 }
