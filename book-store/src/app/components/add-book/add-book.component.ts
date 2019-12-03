@@ -21,8 +21,9 @@ export class AddBookComponent implements OnInit {
 
   AuthorName = new FormControl();
   errorMgs: string;
-  selectedPattern: string;
+
   patternNormal: any = '^[A].*';
+
 
 
   constructor(private service: BookService,
@@ -31,11 +32,7 @@ export class AddBookComponent implements OnInit {
 
   ngOnInit() {
 
-    this.selectedPattern = this.patternNormal; // will change based on user preference
-
-    if (this.selectedPattern === this.patternNormal) {
-      this.errorMgs = 'Author name should start from letter A';
-    }
+    this.errorMgs = 'Author name should start from letter A';
   }
 
   async addBook() {
