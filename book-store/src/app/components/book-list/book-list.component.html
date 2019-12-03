@@ -1,49 +1,56 @@
 
+<img src="/assets/addbook.png" (click)="openAddBook()" title="Add a book">
 
-<img src="/assets/addbook.png" (click)="openAddBook()" label="Add a book" >
-
-<h4 *ngIf="dataSource.data==null; else table" >There is no records</h4>
-
-<ng-template class="table" #table  >
-<h4>Books in our store:</h4>
-
-<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
-  <!-- Position Column -->
-  <ng-container matColumnDef="id">
-    <th mat-header-cell *matHeaderCellDef> No. </th>
-    <td mat-cell *matCellDef="let element"> {{element.id}} </td>
-  </ng-container>
-
-  <!-- Name Column -->
-  <ng-container matColumnDef="title">
-    <th mat-header-cell *matHeaderCellDef> Title </th>
-    <td mat-cell *matCellDef="let element"> {{element.title}} </td>
-  </ng-container>
-
-  <ng-container matColumnDef="author">
-    <th mat-header-cell *matHeaderCellDef> Author </th>
-    <td mat-cell *matCellDef="let element"> {{element.author}} </td>
-  </ng-container>
-
-  <ng-container matColumnDef="isbn">
-    <th mat-header-cell *matHeaderCellDef> ISBN </th>
-    <td mat-cell *matCellDef="let element"> {{element.isbn}} </td>
-  </ng-container>
-
-  <ng-container matColumnDef="actions">
-    <th mat-header-cell *matHeaderCellDef></th>
-    <td mat-cell *matCellDef="let row">
-      <button mat-icon-button matTooltip="Click to Delete" class="iconbutton" color="warn" style="position: relative; float: right;">
-        <mat-icon aria-label="Delete" (click)="delete(row)" >delete</mat-icon>
-      </button>
-    </td>
-  </ng-container>
+<h4 *ngIf="dataSource.data==null; else table">There is no records</h4>
 
 
+<ng-template class="table" #table>
+  <h4>Books in our store:</h4>
 
-  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <div class="flex flex-center flex-wrap">
+    <mat-form-field>
+      <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+    </mat-form-field>
 
-  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-</table>
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+      <!-- Position Column -->
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef> No.</th>
+        <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+      </ng-container>
 
+      <!-- Name Column -->
+      <ng-container matColumnDef="title">
+        <th mat-header-cell *matHeaderCellDef> Title</th>
+        <td mat-cell *matCellDef="let element"> {{element.title}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="author">
+        <th mat-header-cell *matHeaderCellDef> Author</th>
+        <td mat-cell *matCellDef="let element"> {{element.author}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="isbn">
+        <th mat-header-cell *matHeaderCellDef> ISBN</th>
+        <td mat-cell *matCellDef="let element"> {{element.isbn}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef></th>
+        <td mat-cell *matCellDef="let row">
+          <button mat-icon-button matTooltip="Click to Delete" class="iconbutton" color="warn"
+                  style="position: relative; float: right;">
+            <mat-icon aria-label="Delete" (click)="delete(row)">delete</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </div>
 </ng-template>
+
+

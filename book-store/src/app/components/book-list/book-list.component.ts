@@ -37,4 +37,8 @@ export class BookListComponent implements OnInit {
       this.getAllBooks();
     });
   }
+
+  applyFilter(filterValue: string) {
+    this.dataSource.filter = filterValue.trim().toLowerCase();
+  }
 }
