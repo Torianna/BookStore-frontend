@@ -10,7 +10,7 @@ Build your angular project by typing:
 
     ng build
   
-Copy folder conent from /dist/book-store to backend's /resources/static
+Copy folder content from /dist/book-store to backend's /resources/static
 
 Build your Maven project by typing:
 
