@@ -1,5 +1,5 @@
 
-<img src="/assets/addbook.png" (click)="openAddBook()" title="Add a book">
+<img src="/assets/addbook.png" (click)="openAddBook()" title="Add book" style="cursor: pointer;">
 
 <h4 *ngIf="dataSource.data==null; else table">There is no records</h4>
 
@@ -15,7 +15,7 @@
     <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
       <!-- Position Column -->
       <ng-container matColumnDef="id">
-        <th mat-header-cell *matHeaderCellDef> No.</th>
+        <th mat-header-cell *matHeaderCellDef> ID</th>
         <td mat-cell *matCellDef="let element"> {{element.id}} </td>
       </ng-container>
 

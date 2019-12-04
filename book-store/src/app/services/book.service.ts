@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class BookService {
 
-  private url = `http://localhost:8080/bookStore/books`;
+  private url = `http://127.0.0.1:8080/bookStore/books`;
 
   constructor(private http: HttpClient) { }
 

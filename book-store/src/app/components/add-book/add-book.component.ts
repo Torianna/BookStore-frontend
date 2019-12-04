@@ -22,7 +22,7 @@ export class AddBookComponent implements OnInit {
   AuthorName = new FormControl();
   errorMgs: string;
 
-  patternNormal: any = '^[A].*';
+  patternNormal: any = '(.*)?([\\b^A]+([a-z][A-Z]*)+\\s?)(.*)?';
 
 
 
@@ -32,7 +32,7 @@ export class AddBookComponent implements OnInit {
 
   ngOnInit() {
 
-    this.errorMgs = 'Author name should start from letter A';
+    this.errorMgs = 'Authors forename or authors surname should start from letter A';
   }
 
   async addBook() {
@@ -46,4 +46,6 @@ export class AddBookComponent implements OnInit {
         console.error(err);
       });
   }
+
+
 }

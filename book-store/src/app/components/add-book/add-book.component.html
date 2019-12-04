@@ -10,7 +10,7 @@
                 <input  matInput placeholder="ISBN" [(ngModel)]="book.isbn" [ngModelOptions]="{standalone: true}" required >
               </mat-form-field>
               <mat-form-field class="example-full-width">
-                <input  matInput placeholder="Author" [(ngModel)]="book.author"  [pattern]="patternNormal" [formControl]="AuthorName" required #myInput>
+                <input  matInput placeholder="Author" [(ngModel)]="book.author" [pattern]="patternNormal" [formControl]="AuthorName" required #myInput>
               </mat-form-field>
               <mat-error  *ngIf="AuthorName.errors&&AuthorName.errors.pattern">{{errorMgs}}</mat-error>
           <button mat-raised-button color="primary" type="submit" name="upload" value="Upload"
