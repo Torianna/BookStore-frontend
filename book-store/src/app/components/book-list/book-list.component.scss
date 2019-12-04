@@ -1,0 +1,46 @@
+mat-drawer-container {
+  height: 100%;
+  margin-bottom: 20px;
+}
+
+
+table {
+
+  width: 80%;
+}
+
+h4{
+  text-align: center;
+  font-size: 20px;
+}
+
+img
+{
+  top:60px;
+  position: relative;
+  width: 50px;
+
+}
+
+.mat-form-field {
+
+  font-size: 14px;
+  width: 80%;
+  background: white;
+
+}
+
+
+
+.flex {
+  margin-bottom: auto;
+  display: flex;
+}
+
+.flex-center {
+  justify-content: center;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
