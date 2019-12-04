@@ -1,6 +1,6 @@
 # BookStore-frontend
 
-This is drontend for app which is able to store book entries and list them using REST API.
+This is frontend for app which is able to store book entries and list them using REST API.
 
 ##### PREREQUISITES:
 
